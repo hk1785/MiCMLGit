@@ -1,7 +1,5 @@
 FROM openanalytics/r-base
 
-MAINTAINER Hyunwook Koh "hyunwook.koh@stonybrook.edu"
-
 RUN apt-get update && apt-get install -y \
     sudo \
     pandoc \
