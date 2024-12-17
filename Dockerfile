@@ -54,7 +54,7 @@ COPY app/Data/Individual/tree.tre /root/app
 
 COPY app/www/home.png /root/app
 
-COPY app/MiDataProc.Data.Input.R /root/app
+COPY app/MiDataProc.DataInput.R /root/app
 COPY app/MiDataProc.Descriptive.R /root/app
 COPY app/MiDataProc.GLM.R /root/app
 COPY app/MiDataProc.CML.R /root/app
