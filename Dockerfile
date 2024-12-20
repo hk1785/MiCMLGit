@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
     libmpfr-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN R -e "install.packages(c('ape', 'BiocManager', 'bios2mds', 'caret', 'checkmate', 'compositions', 'data.table', 'doParallel', 'DT', 'ecodist', 'fossil', 'fontawesome', 'GUniFrac', 'googleVis', 'ggplot2', 'ggplotify', 'grid', 'grf', 'htmltools', 'Matrix', 'MiRKAT', 'phangorn', 'picante', 'plotly', 'proxy', 'randomForest', 'remotes', 'reshape2', 'rpart', 'rpart.plot', 'rmarkdown', 'seqinr', 'shiny', 'shinydashboard', 'shinyjs', 'shinyWidgets', 'stringr', 'tidyverse', 'vegan', 'VGAM', 'xtable', 'zCompositions', 'zip'), repos='https://cloud.r-project.org/')"
+RUN R -e "install.packages(c('rgl', 'ape', 'BiocManager', 'bios2mds', 'caret', 'checkmate', 'compositions', 'data.table', 'doParallel', 'DT', 'ecodist', 'fossil', 'fontawesome', 'GUniFrac', 'googleVis', 'ggplot2', 'ggplotify', 'grid', 'grf', 'htmltools', 'Matrix', 'MiRKAT', 'phangorn', 'picante', 'plotly', 'proxy', 'randomForest', 'remotes', 'reshape2', 'rpart', 'rpart.plot', 'rmarkdown', 'seqinr', 'shiny', 'shinydashboard', 'shinyjs', 'shinyWidgets', 'stringr', 'tidyverse', 'vegan', 'VGAM', 'xtable', 'zCompositions', 'zip'), repos='https://cloud.r-project.org/')"
 RUN R -e "BiocManager::install('phyloseq')"
 RUN R -e "remotes::install_github('joey711/biomformat')"
 RUN R -e "remotes::install_github('nik01010/dashboardthemes', force = TRUE)"
