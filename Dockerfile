@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     build-essential \
     r-base-dev \
-    pkg-config \
+    pkgconf \
     cmake \
     libtiff5-dev \
     libharfbuzz-dev \
@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN R -e "install.packages(c('ape', 'BiocManager', 'bios2mds', 'caret', 'checkmate', 'compositions', 'data.table', 'doParallel', 'DT', 'ecodist', 'edarf', 'fossil', 'fontawesome', 'GUniFrac', 'googleVis', 'ggplot2', 'ggplotify', 'grid', 'grf', 'htmltools', 'Matrix', 'MiRKAT', 'mmpf', 'phangorn', 'picante', 'plotly', 'proxy', 'randomForest', 'remotes', 'reshape2', 'rpart', 'rpart.plot', 'rmarkdown', 'seqinr', 'shiny', 'shinydashboard', 'shinyjs', 'shinyWidgets', 'stringr', 'tidyverse', 'vegan', 'VGAM', 'xtable', 'zCompositions', 'zip'), repos='https://cloud.r-project.org/')"
+RUN R -e "install.packages('mmpf_0.0.5.tar.gz', repos = NULL, type='source')"
 
 RUN R -e "BiocManager::install('phyloseq')"
 RUN R -e "remotes::install_github('joey711/biomformat')"
