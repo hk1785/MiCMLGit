@@ -28,14 +28,10 @@ RUN apt-get update && apt-get install -y \
     libmpfr-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN R -e "install.packages(c('ape', 'BiocManager', 'bios2mds', 'caret', 'checkmate', 'compositions', 'data.table', 'doParallel', 'DT', 'ecodist', 'edarf', 'fossil', 'fontawesome', 'GUniFrac', 'googleVis', 'ggplot2', 'ggplotify', 'grid', 'grf', 'htmltools', 'Matrix', 'MiRKAT', 'mmpf', 'phangorn', 'picante', 'plotly', 'proxy', 'randomForest', 'remotes', 'reshape2', 'rpart', 'rpart.plot', 'rmarkdown', 'seqinr', 'shiny', 'shinydashboard', 'shinyjs', 'shinyWidgets', 'stringr', 'tidyverse', 'vegan', 'VGAM', 'xtable', 'zCompositions', 'zip'), repos='https://cloud.r-project.org/')"
-RUN R -e "install.packages('mmpf_0.0.5.tar.gz', repos = NULL, type='source')"
-
+RUN R -e "install.packages(c('ape', 'BiocManager', 'bios2mds', 'caret', 'checkmate', 'compositions', 'data.table', 'doParallel', 'DT', 'ecodist', 'fossil', 'fontawesome', 'GUniFrac', 'googleVis', 'ggplot2', 'ggplotify', 'grid', 'grf', 'htmltools', 'Matrix', 'MiRKAT', 'phangorn', 'picante', 'plotly', 'proxy', 'randomForest', 'remotes', 'reshape2', 'rpart', 'rpart.plot', 'rmarkdown', 'seqinr', 'shiny', 'shinydashboard', 'shinyjs', 'shinyWidgets', 'stringr', 'tidyverse', 'vegan', 'VGAM', 'xtable', 'zCompositions', 'zip'), repos='https://cloud.r-project.org/')"
 RUN R -e "BiocManager::install('phyloseq')"
 RUN R -e "remotes::install_github('joey711/biomformat')"
 RUN R -e "remotes::install_github('nik01010/dashboardthemes', force = TRUE)"
-RUN R -e "remotes::install_github('jcrodriguez1989/chatgpt')"
-RUN R -e "remotes::install_github('zmjones/edarf', subdir = 'pkg')"
 RUN R -e "remotes::install_github('wdl2459/ConQuR', force = TRUE)"
 RUN R -e "BiocManager::install('sva')"
 RUN R -e "remotes::install_github('prise6/aVirtualTwins', build_vignettes = TRUE)"
