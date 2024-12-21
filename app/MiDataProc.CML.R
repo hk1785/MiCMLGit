@@ -80,7 +80,7 @@ bort.func <- function(subgroup.id.result, level.name, n.tree = 20000) {
   rownames(Sel.Taxa) <- "Full names"
   colnames(Sel.Taxa) <- sel.taxa
   set.seed(521, kind = "Mersenne-Twister", normal.kind = "Inversion")
-  BoRT.out <- boot.test(Z.hat = Treat.Effect, best.dt.fit, n.boot = 100)
+  BoRT.out <- boot.test(Z.hat = Treat.Effect, best.dt.fit, n.boot = n.tree)
   BoRT.out <- round(BoRT.out, 3)
   colnames(BoRT.out) <- NULL
   out <- list(Sel.Taxa = Sel.Taxa, BoRT.out = BoRT.out)
